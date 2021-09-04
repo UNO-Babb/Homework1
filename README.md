@@ -68,7 +68,7 @@ pressure = WeatherInfo.getPressure()
 ```
 
 ### getWindSpeed()
-Returns a **float** value for the current wind speed measured in miles per hour.
+Returns a **float** value for the current wind speed measured in **meters per second**.
 ```
 print(WeatherInfo.getWindSpeed())
 speed = WeatherInfo.getWindSpeed()
@@ -112,6 +112,7 @@ Rain Types:
 
 ### Wind speed descriptions
 The Beaufort scale is an empirical measure that relates wind speed to observed conditions at sea or on land. Its full name is the Beaufort wind force scale.[Wikipedia](https://en.wikipedia.org/wiki/Beaufort_scale)
+(Note: Our program provide wind speed in Meters per Second.)
 - Calm (<1 mph)
 - Light air (1-3 mph)
 - Light breeze (4-7 mph)
