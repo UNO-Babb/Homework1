@@ -15,6 +15,13 @@ Use this function to set your private API key for OpenWeather
 ```
 WeatherInfo.setKey("1234567890abcdef")
 ```
+
+### setCity(city)
+Use this to set the city that will be reported on.
+```
+WeatherInfo.setCity("Omaha")
+```
+
 ### updateWeather()
 Once your key is set, this will make the call to the OpenWeather database for a live weather update. This must be done before any of the other calls will return accurate weather information.
 This function will return a **boolean** value to indicate if the call was successful. For example, if the defined city is not valid or misspelled, the function will get an error from the OpenWeather API. In this case, the function would return *False* to indicate that the call was not successful.
