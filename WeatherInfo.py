@@ -20,8 +20,23 @@ def setCity(city):
 
 def updateWeather():
     global description, feels_like, kelvin_temp, humidity, pressure, wind_speed
-    weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + user_city + "&APPID=" + user_key
+
+    geoURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + user_city +"&appid=" + user_key
+
+
     try:
+        lat = 0
+        lon = 0
+        with urllib.request.urlopen(geoURL) as url:
+            data = json.loads(url.read().decode())
+            lat = str(data[0]['lat'])
+            lon = str(data[0]['lon'])
+
+            #print(lat, lon )
+
+        weatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + user_key
+
+
         with urllib.request.urlopen(weatherURL) as url:
             data = json.loads(url.read().decode())
             #print(data)
